@@ -1,0 +1,30 @@
+import java.util.*;
+import java.math.BigInteger;
+public class Hello {
+
+public static void main(String[] args) {
+//Your Code Here
+Scanner sc=new Scanner(System.in);
+int r,c;
+r=sc.nextInt();
+c=sc.nextInt();
+
+BigInteger[][] matrix=new BigInteger[r][c];
+
+for(int i=0;i<r;i++){
+
+for(int j=0;j<c;j++){
+
+if(i==0||j==0)
+matrix[i][j]=BigInteger.valueOf(1);
+else
+matrix[i][j]=matrix[i-1][j].add(matrix[i][j-1]);
+
+
+}
+
+}
+
+System.out.print(matrix[r-1][c-1]);
+}
+}
